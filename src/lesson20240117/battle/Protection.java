@@ -1,10 +1,23 @@
 package lesson20240117.battle;
 
+import java.util.Random;
+
 public class Protection {
 
     private String name;
 
     private int level;
+
+    private static Protection[] availableProtection;
+
+    static {
+        Protection protection1 = new Protection("Hat", 0);
+        Protection protection2 = new Protection("Helmet", 3);
+        Protection protection3 = new Protection("Jacket", 1);
+        Protection protection4 = new Protection("Armour", 4);
+        Protection protection5 = new Protection("T-shirt", 0);
+        availableProtection = new Protection[]{protection1, protection2, protection3, protection4, protection5};
+    }
 
     public Protection(String name, int level) {
         this.name = name;
@@ -33,5 +46,11 @@ public class Protection {
                 "name='" + name + '\'' +
                 ", level=" + level +
                 '}';
+    }
+
+    public static Protection generateRandomProtection() {
+        Random random = new Random();
+        int r = random.nextInt(availableProtection.length);
+        return availableProtection[r];
     }
 }
