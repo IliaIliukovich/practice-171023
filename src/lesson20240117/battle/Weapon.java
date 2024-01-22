@@ -6,6 +6,8 @@ public class Weapon {
 
     private String name;
 
+    private int force;
+
     private static Weapon[] availableWeapon;
 
     static {
@@ -14,7 +16,6 @@ public class Weapon {
         availableWeapon = new Weapon[]{weapon1, weapon2};
     }
 
-    private int force;
 
     public Weapon(String name, int force) {
         this.name = name;

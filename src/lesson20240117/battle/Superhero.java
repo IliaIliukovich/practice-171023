@@ -76,7 +76,7 @@ public class Superhero {
         Random random = new Random();
         Weapon weapon = Weapon.generateRandomWeapon();
         Protection protection = Protection.generateRandomProtection();
-        String[] names = {"Batman", "Superman", "Spriderman"};
+        String[] names = {"Batman", "Superman", "Spiderman"};
         return new Superhero(names[random.nextInt(names.length)], protection, weapon, random.nextInt(5));
     }
 
