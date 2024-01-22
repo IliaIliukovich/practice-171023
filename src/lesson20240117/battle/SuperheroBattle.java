@@ -23,24 +23,46 @@ public class SuperheroBattle {
     //3. Реализовать методы generateRandomSuperHero(), fight()
     //fight(Superhero another)
     //fight(Superhero one, Superhero second)
-    //
     //4. Продемонстировать сражение между случайными персонажами
+
+    //5. Создать класс Wizard - волшебник. Реализовать у волшебника
+    //- методы heal(Superhero hero), heal(Superhero[] heroes) исцеления раненых персонажей
+    //- методы increaseForce(Superhero hero), increaseForce(Superhero[] heroes) увеличения силы персонажей.
+    //Сила увеличивается пропорционально уровню (поле level) волшебника по формуле force = force + force * 0.1 * level
+    //6. В классы Superhero и Wizard добавить метод introduce(), который выводил бы в консоль тест приветствия персонажа.
+    //По умолчанию приветствие выводится в виде "Hi, I'm Batman!".
+    //Однако должна быть возможность каждому персонажу задавать свой особенный текст.
+
+    // Пример запуска методов:
+    //    Wizard wizard1 = new Wizard("Wizard 1 Name", 10, "I'm wizard. I can do magic");
+    //    wizard.introduce();
+    //
+    //    Wizard wizard2 = new Wizard("Wizard 2 Name", 5);
+    //    wizard2.introduce();
+    //
+    //    wizard1.heal(jack);
+
     public static void main(String[] args) {
         Weapon sword = new Weapon("Sword", 5);
         Protection helmet = new Protection("Helmet", 2);
-        Superhero spiderman = new Superhero("Spiderman", helmet, sword, 2);
+        Superhero jack = new Superhero("Jack", helmet, sword, 2);
 
         Weapon gun = new Weapon("Gun", 10);
         Protection jacket = new Protection("Jacket", 1);
-        Superhero batman = new Superhero("Batman", jacket, gun, 3);
+        Superhero william = new Superhero("William", jacket, gun, 3);
 
-        System.out.println(spiderman);
-        System.out.println(batman);
+        System.out.println("Before fight:");
+        System.out.println(jack);
+        System.out.println(william);
+        jack.fight(william);
+        System.out.println("After fight:");
+        System.out.println(jack);
+        System.out.println(william);
 
-        Protection randomProtection = Protection.generateRandomProtection();
-        System.out.println(randomProtection);
-        System.out.println(Protection.generateRandomProtection());
-        System.out.println(Protection.generateRandomProtection());
+        System.out.println("-----Fight with randomSuperHero-----");
+        Superhero randomSuperHero = Superhero.generateRandomSuperHero();
+        william.fight(randomSuperHero);
+
     }
 
 

@@ -1,5 +1,7 @@
 package lesson20240117.battle;
 
+import java.util.Random;
+
 public class Superhero {
 
     private String name;
@@ -68,5 +70,28 @@ public class Superhero {
                 ", force=" + force +
                 ", protection=" + protection +
                 ", weapon=" + weapon;
+    }
+
+    public static Superhero generateRandomSuperHero() {
+        Random random = new Random();
+        Weapon weapon = Weapon.generateRandomWeapon();
+        Protection protection = Protection.generateRandomProtection();
+        String[] names = {"Batman", "Superman", "Spriderman"};
+        return new Superhero(names[random.nextInt(names.length)], protection, weapon, random.nextInt(5));
+    }
+
+    public void fight(Superhero another) {
+        System.out.println(this.name + " fights with " + another.name);
+        int myForce = this.force + this.weapon.getForce();
+        int anotherForce = another.force + another.weapon.getForce();
+        if (myForce < anotherForce) {
+            System.out.println(this.name + " loses");
+            this.health = this.health - (anotherForce - myForce) / this.protection.getLevel();
+        } else if (myForce > anotherForce) {
+            System.out.println(this.name + " loses");
+            another.health = another.health - (myForce - anotherForce) / another.protection.getLevel();
+        } else {
+            System.out.println("No one wins. Powers are equal");
+        }
     }
 }

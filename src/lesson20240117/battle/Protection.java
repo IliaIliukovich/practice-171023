@@ -11,11 +11,11 @@ public class Protection {
     private static Protection[] availableProtection;
 
     static {
-        Protection protection1 = new Protection("Hat", 0);
+        Protection protection1 = new Protection("Hat", 1);
         Protection protection2 = new Protection("Helmet", 3);
         Protection protection3 = new Protection("Jacket", 1);
         Protection protection4 = new Protection("Armour", 4);
-        Protection protection5 = new Protection("T-shirt", 0);
+        Protection protection5 = new Protection("T-shirt", 1);
         availableProtection = new Protection[]{protection1, protection2, protection3, protection4, protection5};
     }
 

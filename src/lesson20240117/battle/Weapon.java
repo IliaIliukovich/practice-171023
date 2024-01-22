@@ -1,8 +1,18 @@
 package lesson20240117.battle;
 
+import java.util.Random;
+
 public class Weapon {
 
     private String name;
+
+    private static Weapon[] availableWeapon;
+
+    static {
+        Weapon weapon1 = new Weapon("Sword", 5);
+        Weapon weapon2 = new Weapon("Stick", 1);
+        availableWeapon = new Weapon[]{weapon1, weapon2};
+    }
 
     private int force;
 
@@ -33,5 +43,11 @@ public class Weapon {
                 "name='" + name + '\'' +
                 ", force=" + force +
                 '}';
+    }
+
+    public static Weapon generateRandomWeapon() {
+        Random random = new Random();
+        int r = random.nextInt(availableWeapon.length);
+        return availableWeapon[r];
     }
 }
