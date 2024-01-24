@@ -64,7 +64,7 @@ public class SuperheroBattle {
         randomSuperHero.introduce();
         william.fight(randomSuperHero);
 
-        Wizard wizard = new Wizard("Dumbledor", 5);
+        Wizard wizard = new Wizard("Dumbledore", 5);
         wizard.introduce();
         wizard.heal(jack);
         wizard.increaseForce(jack);

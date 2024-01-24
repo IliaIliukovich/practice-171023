@@ -1,23 +1,17 @@
 package lesson20240117.battle;
 
-public class Wizard {
-
-    private String name;
+public class Wizard extends Character {
 
     private int level;
 
-    private String message;
-
     public Wizard(String name, int level) {
-        this.name = name;
+        super(name);
         this.level = level;
-        this.message = "Hi, I' am " + name;
     }
 
     public Wizard(String name, int level, String message) {
-        this.name = name;
+        super(name, message);
         this.level = level;
-        this.message = message;
     }
 
     public void heal(Superhero hero){
@@ -46,11 +40,6 @@ public class Wizard {
             increaseForce(superhero);
         }
     }
-
-    public void introduce(){
-        System.out.println(message);
-    }
-
 
 
 }

@@ -2,11 +2,7 @@ package lesson20240117.battle;
 
 import java.util.Random;
 
-public class Superhero {
-
-    private String name;
-
-    private String message;
+public class Superhero extends Character {
 
     private int health;
 
@@ -17,21 +13,19 @@ public class Superhero {
     private Weapon weapon;
 
     public Superhero(String name, Protection protection, Weapon weapon, int force) {
-        this.name = name;
+        super(name);
         this.protection = protection;
         this.weapon = weapon;
         this.health = 100;
         this.force = force;
-        this.message = "Hi, I'm " + name;
     }
 
     public Superhero(String name, Protection protection, Weapon weapon, int force, String message) {
-        this.name = name;
+        super(name, message);
         this.protection = protection;
         this.weapon = weapon;
         this.health = 100;
         this.force = force;
-        this.message = message;
     }
 
     public int getForce() {
@@ -41,14 +35,6 @@ public class Superhero {
     public void setForce(int force) {
         if (force < 0) throw new RuntimeException("Force cannot be less than 0");
         this.force = force;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getHealth() {
@@ -77,7 +63,7 @@ public class Superhero {
 
     @Override
     public String toString() {
-        return "Hero='" + name + '\'' +
+        return "Hero='" + getName() + '\'' +
                 ", health=" + health +
                 ", force=" + force +
                 ", protection=" + protection +
@@ -93,21 +79,18 @@ public class Superhero {
     }
 
     public void fight(Superhero another) {
-        System.out.println(this.name + " fights with " + another.name);
+        System.out.println(this.getName() + " fights with " + another.getName());
         int myForce = this.force + this.weapon.getForce();
         int anotherForce = another.force + another.weapon.getForce();
         if (myForce < anotherForce) {
-            System.out.println(another.name + " wins");
+            System.out.println(another.getName() + " wins");
             this.health = this.health - (anotherForce - myForce) / this.protection.getLevel();
         } else if (myForce > anotherForce) {
-            System.out.println(this.name + " wins");
+            System.out.println(this.getName() + " wins");
             another.health = another.health - (myForce - anotherForce) / another.protection.getLevel();
         } else {
             System.out.println("No one wins. Powers are equal");
         }
     }
 
-    public void introduce(){
-        System.out.println(message);
-    }
 }
