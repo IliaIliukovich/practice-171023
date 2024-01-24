@@ -16,8 +16,8 @@ public class SuperheroBattle {
     //методы:
     //- static generateRandomSuperHero()
     //- fight()  ----> health =  health - (force1 - force2) / level
-    //
-    //
+
+    // ---- 1 занятие ----
     //1. Создать 3 класса Superhero, Weapon, Protection
     //2. Создать несколько персонажей SuperheroBattle main()
     //3. Реализовать методы generateRandomSuperHero(), fight()
@@ -25,6 +25,7 @@ public class SuperheroBattle {
     //fight(Superhero one, Superhero second)
     //4. Продемонстировать сражение между случайными персонажами
 
+    // ---- 2 занятие ----
     //5. Создать класс Wizard - волшебник. Реализовать у волшебника
     //- методы heal(Superhero hero), heal(Superhero[] heroes) исцеления раненых персонажей
     //- методы increaseForce(Superhero hero), increaseForce(Superhero[] heroes) увеличения силы персонажей.
@@ -41,6 +42,21 @@ public class SuperheroBattle {
     //    wizard2.introduce();
     //
     //    wizard1.heal(jack);
+
+    // ---- 3 занятие ----
+    // 7. Добавить абстрактный класс Character. Вынести в него поля name, message, метод introduce().
+    //Все персонажи игры должны быть его наследниками.
+    //8. Добавить абстрактный класс CombatCharacter. Вынести в него поле health.
+    //Добавить в него следующие методы
+    //- public abstract int countForce();
+    //- public abstract int countProtectionLevel();
+    //- public void fight(CombatCharacter another)
+    //Все сражающиеся персонажи игры должны быть его наследниками.
+    // Метод fight() должен быть реализован с применением абстрактных методов countForce(), countProtectionLevel()
+    //9. Создать класс EvilCreature.
+    //EvilCreature умеет сражаться, обладает силой и защитой, но не имеет доспехов и оружия.
+    //У EvilCreature есть поле boolean isAngry.
+    //Когда существо злое, его сила и наносимый урон здоровью противника удваивается.
 
     public static void main(String[] args) {
         Weapon sword = new Weapon("Sword", 15);

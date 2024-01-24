@@ -33,6 +33,7 @@ public class Wizard extends Character {
         int force = superhero.getForce();
         force = force + (int) (force * 0.1 * level);
         superhero.setForce(force);
+        System.out.println("Wizard " + getName() + " increased force of " + superhero.getName());
     }
 
     public void increaseForce(Superhero[] superheroes){
