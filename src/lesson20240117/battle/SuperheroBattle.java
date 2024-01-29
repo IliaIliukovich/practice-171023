@@ -1,5 +1,11 @@
 package lesson20240117.battle;
 
+import lesson20240117.battle.characters.Mag;
+import lesson20240117.battle.characters.Superhero;
+import lesson20240117.battle.characters.Wizard;
+import lesson20240117.battle.items.Protection;
+import lesson20240117.battle.items.Weapon;
+
 public class SuperheroBattle {
 
     // Main logic of the battle game
@@ -33,6 +39,12 @@ public class SuperheroBattle {
 
         Wizard evilWizard = new Wizard("Evil wizard", 10, "Evil wizard has knowledge of dark magic");
         evilWizard.introduce();
+
+        Mag mag = new Mag("Mag", 60, 2, 2);
+        mag.curse(william);
+        System.out.println("After curse: " + william);
+        mag.fight(william);
+        System.out.println("After fight: " + william);
     }
 
 

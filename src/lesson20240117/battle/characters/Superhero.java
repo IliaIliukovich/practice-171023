@@ -1,4 +1,7 @@
-package lesson20240117.battle;
+package lesson20240117.battle.characters;
+
+import lesson20240117.battle.items.Protection;
+import lesson20240117.battle.items.Weapon;
 
 import java.util.Random;
 

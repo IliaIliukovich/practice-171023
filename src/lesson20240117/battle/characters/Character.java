@@ -1,4 +1,4 @@
-package lesson20240117.battle;
+package lesson20240117.battle.characters;
 
 public abstract class Character {
 

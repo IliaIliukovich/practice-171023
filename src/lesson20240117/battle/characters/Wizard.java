@@ -1,6 +1,12 @@
-package lesson20240117.battle;
+package lesson20240117.battle.characters;
 
-public class Wizard extends Character {
+import lesson20240117.battle.characters.Character;
+import lesson20240117.battle.characters.CombatCharacter;
+import lesson20240117.battle.characters.Superhero;
+import lesson20240117.battle.skills.HealingSkills;
+import lesson20240117.battle.skills.ReinforcementSkills;
+
+public class Wizard extends Character implements HealingSkills, ReinforcementSkills {
 
     private int level;
 
@@ -14,7 +20,8 @@ public class Wizard extends Character {
         this.level = level;
     }
 
-    public void heal(Superhero hero){
+    @Override
+    public void heal(CombatCharacter hero){
         if (hero.getHealth() == 100) {
             System.out.println(hero.getName() + " is healthy. Nothing to heal");
         } else {
@@ -23,12 +30,14 @@ public class Wizard extends Character {
         }
     }
 
-    public void heal(Superhero[] heroes){
-        for (Superhero superhero : heroes){
-            heal(superhero);
+    @Override
+    public void heal(CombatCharacter[] characters){
+        for (CombatCharacter character : characters){
+            heal(character);
         }
     }
 
+    @Override
     public void increaseForce(Superhero superhero) {
         int force = superhero.getForce();
         force = force + (int) (force * 0.1 * level);
@@ -36,6 +45,7 @@ public class Wizard extends Character {
         System.out.println("Wizard " + getName() + " increased force of " + superhero.getName());
     }
 
+    @Override
     public void increaseForce(Superhero[] superheroes){
         for (Superhero superhero : superheroes) {
             increaseForce(superhero);

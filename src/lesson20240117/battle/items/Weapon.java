@@ -1,4 +1,4 @@
-package lesson20240117.battle;
+package lesson20240117.battle.items;
 
 import java.util.Random;
 

@@ -1,4 +1,6 @@
-package lesson20240117.battle;
+package lesson20240117.battle.characters;
+
+import lesson20240117.battle.characters.CombatCharacter;
 
 public class EvilCreature extends CombatCharacter {
 
