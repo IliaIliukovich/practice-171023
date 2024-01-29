@@ -1,0 +1,66 @@
+ Superhero battle
+
+Superhero class:
+- name String
+- health int
+- force int
+- Weapon class: - name String
+                - force int
+- Protection class: - name String
+                    - level int
+
+методы:
+- static generateRandomSuperHero()
+- fight()  ----> health =  health - (force1 - force2) / level
+
+ ---- 1 занятие ----
+1. Создать 3 класса Superhero, Weapon, Protection
+2. Создать несколько персонажей SuperheroBattle main()
+3. Реализовать методы generateRandomSuperHero(), fight()
+fight(Superhero another)
+fight(Superhero one, Superhero second)
+4. Продемонстировать сражение между случайными персонажами
+
+ ---- 2 занятие ----
+5. Создать класс Wizard - волшебник. Реализовать у волшебника
+- методы heal(Superhero hero), heal(Superhero[] heroes) исцеления раненых персонажей
+- методы increaseForce(Superhero hero), increaseForce(Superhero[] heroes) увеличения силы персонажей.
+Сила увеличивается пропорционально уровню (поле level) волшебника по формуле force = force + force * 0.1 * level
+6. В классы Superhero и Wizard добавить метод introduce(), который выводил бы в консоль тест приветствия персонажа.
+По умолчанию приветствие выводится в виде "Hi, I'm Batman!".
+Однако должна быть возможность каждому персонажу задавать свой особенный текст.
+
+ Пример запуска методов:
+    Wizard wizard1 = new Wizard("Wizard 1 Name", 10, "I'm wizard. I can do magic");
+    wizard.introduce();
+
+    Wizard wizard2 = new Wizard("Wizard 2 Name", 5);
+    wizard2.introduce();
+
+    wizard1.heal(jack);
+
+ ---- 3 занятие ----
+ 7. Добавить абстрактный класс Character. Вынести в него поля name, message, метод introduce().
+Все персонажи игры должны быть его наследниками.
+8. Добавить абстрактный класс CombatCharacter. Вынести в него поле health.
+Добавить в него следующие методы
+- public abstract int countForce();
+- public abstract int countProtectionLevel();
+- public void fight(CombatCharacter another)
+Все сражающиеся персонажи игры должны быть его наследниками.
+ Метод fight() должен быть реализован с применением абстрактных методов countForce(), countProtectionLevel()
+9. Создать класс EvilCreature.
+EvilCreature умеет сражаться, обладает силой и защитой, но не имеет доспехов и оружия.
+У EvilCreature есть поле boolean isAngry.
+Когда существо злое, его сила и наносимый урон здоровью противника удваивается.
+
+ ---- 4 занятие ----
+ 10. Для возможности добавления новых магических персонажей вынести методы из класса Wizard
+ в интерфейсы: HealingSkills, ReinforcementSkills.
+ 11. Добавить класс мага Mag. Маг умеет сражаться, обладает силой и защитой (как EvilCreature),
+ а также обладает магическими навыками:
+ - умеет лечить, увеличавать силу как и волшебник (Wizard)
+ - умеет насылать заклинания (все они будут находиться в отдельном интерфейсе Spells).
+ Заклинание curse() отнимает здоровье CombatCharacter пропорционально уровню мага
+ по формуле health = health - 0.1 * level.
+
