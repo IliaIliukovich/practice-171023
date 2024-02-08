@@ -51,6 +51,23 @@ public class Generics {
         System.out.println(list.get(0));
         System.out.println(list.get(1));
         System.out.println(list.get(2));
+
+
+        int a = 5;
+        int b = 10;
+
+        // swap (a, b)
+//        int tmp = a;
+//        a = b;
+//        b = tmp;
+
+        // swap(a, b)
+        a = a + b; // a ----> a + b
+        b = a - b; // b ----> a + b - b = a
+        a = a - b; // a ----> a + b - a = b
+        System.out.println(a);
+        System.out.println(b);
+
     }
 
 }
