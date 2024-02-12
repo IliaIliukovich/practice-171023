@@ -22,8 +22,8 @@ public class Task4 {
                          {9, 0, 0, 0}};
 
         int[][] output = transpose(input);
-        for (int i = 0; i < output.length; i++) {
-            System.out.println(Arrays.toString(output[i]));
+        for (int[] ints : output) {
+            System.out.println(Arrays.toString(ints));
         }
 //        System.out.println(Arrays.deepToString(output));
 
