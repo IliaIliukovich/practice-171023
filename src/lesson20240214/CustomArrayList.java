@@ -1,6 +1,8 @@
 package lesson20240214;
 
-public class CustomArrayList {
+import java.util.Iterator;
+
+public class CustomArrayList implements Iterable<String> {
 
     private String[] data;
 
@@ -11,9 +13,23 @@ public class CustomArrayList {
     public static void main(String[] args) {
         CustomArrayList list = new CustomArrayList(new String[] {"A", "B", "C", "D"});
 
-//        for (String s : list) { // TODO
-//            System.out.println(s);
-//        }
+        for (String s : list) {
+            System.out.println(s);
+        }
     }
 
+    @Override
+    public Iterator<String> iterator() { // TODO
+        return new Iterator<>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public String next() {
+                return null;
+            }
+        };
+    }
 }
