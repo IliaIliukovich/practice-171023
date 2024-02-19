@@ -16,11 +16,20 @@ public class CustomArrayList implements Iterable<String> {
         for (String s : list) {
             System.out.println(s);
         }
+
+        for (String s : list) {
+            System.out.println(s);
+        }
+
+        Iterator<String> iterator1 = list.iterator();
+        Iterator<String> iterator2 = list.iterator();
+        iterator1.next();
+        iterator2.next();
     }
 
     @Override
-    public Iterator<String> iterator() { // TODO
-        return new Iterator<>() {
+    public Iterator<String> iterator() {
+        return new Iterator<String>() {
             @Override
             public boolean hasNext() {
                 return false;
@@ -32,4 +41,24 @@ public class CustomArrayList implements Iterable<String> {
             }
         };
     }
+
+//    @Override
+//    public Iterator<String> iterator() {
+//        return new Iterator<>() {
+//
+//            int count = 0;
+//            @Override
+//            public boolean hasNext() {
+//                boolean b = count < data.length;
+//                if (!b) count = 0;
+//                return b;
+//            }
+//
+//            @Override
+//            public String next() {
+//                if (!hasNext()) throw new RuntimeException("No elements present");
+//                return data[count++];
+//            }
+//        };
+//    }
 }
