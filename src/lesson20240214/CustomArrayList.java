@@ -29,34 +29,19 @@ public class CustomArrayList implements Iterable<String> {
 
     @Override
     public Iterator<String> iterator() {
-        return new Iterator<String>() {
+        return new Iterator<>() {
+
+            int count = 0;
             @Override
             public boolean hasNext() {
-                return false;
+                return count < data.length;
             }
 
             @Override
             public String next() {
-                return null;
+                if (!hasNext()) throw new RuntimeException("No elements present");
+                return data[count++];
             }
         };
     }
-
-//    @Override
-//    public Iterator<String> iterator() {
-//        return new Iterator<>() {
-//
-//            int count = 0;
-//            @Override
-//            public boolean hasNext() {
-//                return count < data.length;
-//            }
-//
-//            @Override
-//            public String next() {
-//                if (!hasNext()) throw new RuntimeException("No elements present");
-//                return data[count++];
-//            }
-//        };
-//    }
 }
