@@ -49,9 +49,7 @@ public class CustomArrayList implements Iterable<String> {
 //            int count = 0;
 //            @Override
 //            public boolean hasNext() {
-//                boolean b = count < data.length;
-//                if (!b) count = 0;
-//                return b;
+//                return count < data.length;
 //            }
 //
 //            @Override
