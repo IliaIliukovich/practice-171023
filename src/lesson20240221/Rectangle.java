@@ -1,8 +1,6 @@
 package lesson20240221;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Rectangle {
 
@@ -46,6 +44,13 @@ public class Rectangle {
         set.add(rectangle3);
         set.add(rectangle4);
         System.out.println(set.size());
+
+        Rectangle rectangle5 = new Rectangle(30.0, 20.0);
+        Rectangle rectangle6 = new Rectangle(20.0, 20.0);
+        List<Rectangle> rectangles = Arrays.asList(rectangle1, rectangle2, rectangle3,
+                rectangle4, rectangle5, rectangle6);
+        rectangles.sort(new CompareByX());
+        System.out.println(rectangles);
     }
 
     @Override
@@ -72,5 +77,13 @@ public class Rectangle {
         result = result * 31 + Double.hashCode(y);
         return result;
 //        return Objects.hash(x, y);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
