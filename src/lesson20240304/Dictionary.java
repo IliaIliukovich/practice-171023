@@ -1,6 +1,6 @@
 package lesson20240304;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Dictionary {
 
@@ -32,9 +32,54 @@ public class Dictionary {
                 "want Dudley mixing with a child like that. \n";
 
         String[] words = text.split("\\W");
-        System.out.println(Arrays.toString(words));
+//        System.out.println(Arrays.toString(words));
 
+        Map<String, Integer> dictionary = new TreeMap<>();
+        for (String word : words) {
+            String lowerCase = word.toLowerCase();
+            if (dictionary.containsKey(lowerCase)) {
+                Integer count = dictionary.get(lowerCase);
+                dictionary.put(lowerCase, count + 1);
+            } else {
+                dictionary.put(lowerCase, 1);
+            }
+        }
 
+//        System.out.println(dictionary);
+
+        List<Word> list = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
+            Word word = new Word(entry.getKey(), entry.getValue());
+            list.add(word);
+        }
+
+        Collections.sort(list);
+
+        list.forEach(System.out::println);
+    }
+
+    static class Word  implements Comparable<Word>{
+        String value;
+
+        int count;
+
+        public Word(String value, int count) {
+            this.value = value;
+            this.count = count;
+        }
+
+        @Override
+        public int compareTo(Word another) {
+            return another.count - this.count;
+        }
+
+        @Override
+        public String toString() {
+            return "Word{" +
+                    "value='" + value + '\'' +
+                    ", count=" + count +
+                    '}';
+        }
     }
 
 

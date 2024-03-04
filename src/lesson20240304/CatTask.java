@@ -1,8 +1,6 @@
 package lesson20240304;
 
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 public class CatTask {
 
@@ -28,6 +26,7 @@ public class CatTask {
         catMap.put(cat4.getName(), cat4);
         catMap.put(cat5.getName(), cat5);
 
+//2.выведите имена котов, порода которых равна N (на ваше усмотрение).
         System.out.println(catMap);
         for (Map.Entry<String, Cat> entry : catMap.entrySet()){
             if ("white".equals(entry.getValue().getBreed())) {
