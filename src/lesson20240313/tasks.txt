@@ -1,0 +1,33 @@
+1. Имеется два списка элементов.
+List<Integer> list1 = Arrays.asList(1, 2, 3);
+List<Integer> list2 = Arrays.asList(4, 5, 6);
+С помощью flatmap:
+a). Получить все возможные значения сумм чисел из обоих списков
+b). Получить все возможные комбинации пар чисел из обоих списков [1, 4] [2, 6]
+с). Найти все пары чисел, сумма которых будет равна заданному значению sum
+
+2. Получить все тройки пифагоровых чисел до 1000.
+a^2 + b^2 = c^2
+[3, 4, 5]
+[6, 8, 10]
+
+_________________
+Задача 15: Фильтрация и сортировка пользователей по возрасту.
+ class User {
+     private String name;
+     private int age;
+
+ public User(String name, int age) {
+     this.name = name;
+     this.age = age;
+ }
+
+ public String getName() {
+     return name;
+ }
+
+ public int getAge() {
+     return age;
+ }
+
+}

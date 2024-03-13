@@ -40,8 +40,8 @@ public class Tasks {
 
     public static int getSum(List<Integer> integers) {
         int oddSum = 0;
-        for(Integer i: integers) {
-            if(i % 2 != 0) {
+        for (Integer i : integers) {
+            if (i % 2 != 0) {
                 oddSum += i;
             }
         }
@@ -50,26 +50,18 @@ public class Tasks {
 
     public static int getSumWithStream(List<Integer> integers) {
 //        return integers.stream().filter(i -> i % 2 == 1).mapToInt(i -> i).sum();
-        return integers.stream().filter(i -> i % 2 == 1).reduce(0, Integer::sum);
+        return integers.stream().filter(i -> i % 2 == 1).reduce(0, (sum, j) -> sum + j*j);
     }
 
     public static Map<Boolean, List<Integer>> getMap() {
         Map<Boolean, List<Integer>> map = new TreeMap<>();
+        map.put(true, new ArrayList<>());
+        map.put(false, new ArrayList<>());
         for (int i = 0; i < 100; i++) {
             if (i % 3 == 0) {
-                if (map.containsKey(true)) {
-                    map.get(true).add(i);
-                } else {
-                    map.put(true, new ArrayList<>());
-                    map.get(true).add(i);
-                }
+                map.get(true).add(i);
             } else {
-                if (map.containsKey(false)) {
-                    map.get(false).add(i);
-                } else {
-                    map.put(false, new ArrayList<>());
-                    map.get(false).add(i);
-                }
+                map.get(false).add(i);
             }
         }
         return map;
