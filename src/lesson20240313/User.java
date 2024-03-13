@@ -1,8 +1,6 @@
 package lesson20240313;
 
-import javax.naming.ldap.UnsolicitedNotification;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
