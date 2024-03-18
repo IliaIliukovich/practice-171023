@@ -1,0 +1,16 @@
+1. Напишите метод, который принимает целое число
+в качестве параметра и выдает проверяемое исключение, если число нечетное.
+2. Написать метод проверки введенного пароля. Если пароль неверен, выбрасывается проверяемое исключение
+WrongPasswordException с сообщением "Password is wrong".
+3. Один метод вызывает три других метода, которые выбрасывают проверяемые и непроверяемые исключения:
+    public static void method1() {
+        System.out.println(1 / 0);
+    }
+    public static void method2() {
+        throw new NullPointerException("nulls everywhere!");
+    }
+    public static void method3() throws IOException {
+        throw new IOException("File not found");
+    }
+Отловить эти исключения и выбросить вместо них MyAppException, который содержал бы информацию о типе
+исходного исключения и его сообщение.
