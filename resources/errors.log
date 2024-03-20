@@ -1,0 +1,10 @@
+java.lang.ArithmeticException: / by zero
+	at lesson20240320.Tasks.main(Tasks.java:31)
+java.lang.ArithmeticException: / by zero
+	at lesson20240320.Tasks.main(Tasks.java:31)
+java.lang.ArithmeticException: / by zero
+	at lesson20240320.Tasks.main(Tasks.java:31)
+Wed Mar 20 14:35:45 CET 2024 java.lang.ArithmeticException: / by zero
+	        at lesson20240320.Tasks.main(Tasks.java:32)
+Wed Mar 20 14:35:56 CET 2024 java.lang.ArithmeticException: / by zero
+	at lesson20240320.Tasks.main(Tasks.java:32)
