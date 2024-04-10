@@ -14,7 +14,7 @@ public interface MyStream<T> extends MyBaseStream<T, MyStream<T>>{
                 .filter(string -> string.length() == 3)
                 .parallel()
                 .filter(string -> string.startsWith("A"))
-                .sequantial();
+                .sequential();
     }
 
 
