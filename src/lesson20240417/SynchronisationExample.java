@@ -9,16 +9,16 @@ public class SynchronisationExample {
     public static void main(String[] args) {
 
 
-        synchronized (mutex) { //  staticMethod()
+        synchronized (mutex) { //   synch with staticMethod()
             System.out.println("Action in main");
         }
 
         SynchronisationExample example = new SynchronisationExample();
-        synchronized (example) { // nonStatciSynchMethod(), nonStatciSynchMethod2()
+        synchronized (example) { // synch with nonStatciSynchMethod(), nonStatciSynchMethod2()
             System.out.println("Action in main");
         }
 
-        synchronized (SynchronisationExample.class) { // staticSynchMethod()
+        synchronized (SynchronisationExample.class) { // synch with staticSynchMethod(), staticSynchMethod2()
             System.out.println("Action in main");
         }
 
