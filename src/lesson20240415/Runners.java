@@ -55,6 +55,8 @@ public class Runners {
         thread2.start();
         thread3.start();
 
+        // Ready! Steady! Go!
+
         try {
             thread1.join();
             thread2.join();
