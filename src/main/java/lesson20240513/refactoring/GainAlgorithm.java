@@ -15,6 +15,11 @@ import java.util.List;
  * "result" - real goal count.*/
 
 public class GainAlgorithm {
+
+    // Refactoring:
+    // 1. steams
+    // 2. methods and var naming
+    // 3. code refactoring
     private static final int EXPONENTIAL_QUANTITY = 3;
     private static final int MAX_GOAL_DIFFERENCE = 5;
 
